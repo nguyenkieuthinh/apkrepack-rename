@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RenameFixture</string>
+
+    <!--
+      Deliberately shaped like a Firebase/FCM value. The rename tool must NOT
+      touch these: rewriting them silently breaks Firebase at runtime, and the
+      fixture gives us something concrete to assert on.
+    -->
+    <string name="google_app_id" translatable="false">1:1234567890:android:deadbeefdeadbeef</string>
+    <string name="gcm_defaultSenderId" translatable="false">1234567890</string>
+    <string name="default_web_client_id" translatable="false">1234567890-abc.apps.googleusercontent.com</string>
+
+    <!-- must also be left alone -->
+    <string name="com_google_android_gms_version" translatable="false">com.google.android.gms</string>
+</resources>

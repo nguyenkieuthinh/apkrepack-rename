@@ -1,0 +1,32 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>com.github.nguyenphuc22.androidpackagerenamer</id>
+    <name>Android Package Renamer</name>
+    <vendor email="nguyenphuc220100@gmail.com" url="https://github.com/nguyenphuc22/Android-Package-Renamer">PhucVR</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <actions>
+        <group id="RenamePackage" text="RenamePackage">
+            <add-to-group group-id="FileMenu" anchor="last"/>
+            <action id="com.github.nguyenphuc22.androidpackagerenamer.WorkingPackage.RenamePackagei"
+                    class="com.github.nguyenphuc22.androidpackagerenamer.WorkingPackage"
+                    text="Rename Package"
+                    description="Rename package safe and fast"
+            />
+        </group>
+    </actions>
+
+    <actions>
+        <group id="RenamePackageTools" text="RenamePackageTools">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="com.github.nguyenphuc22.androidpackagerenamer.WorkingPackage.RenamePackageiTools"
+                    class="com.github.nguyenphuc22.androidpackagerenamer.WorkingPackage"
+                    text="Rename Package"
+                    description="Rename package safe and fast"
+            />
+        </group>
+    </actions>
+
+</idea-plugin>

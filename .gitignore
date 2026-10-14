@@ -1,0 +1,9 @@
+input/
+output/
+work/
+.tools/
+__pycache__/
+*.apk
+*.jks
+*.keystore
+keys/

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.oldpkg"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="35" />
+
+    <!-- custom permission derived from the package name -->
+    <permission
+        android:name="com.example.oldpkg.permission.CUSTOM"
+        android:protectionLevel="normal" />
+    <uses-permission android:name="com.example.oldpkg.permission.CUSTOM" />
+
+    <application
+        android:label="RenameFixture"
+        android:extractNativeLibs="true"
+        android:taskAffinity="com.example.oldpkg.task">
+
+        <!-- declared FULLY QUALIFIED on purpose -->
+        <activity
+            android:name="com.example.oldpkg.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- custom action + deep link carrying the package name -->
+            <intent-filter>
+                <action android:name="com.example.oldpkg.ACTION_TEST" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="fixture" android:host="com.example.oldpkg" />
+            </intent-filter>
+        </activity>
+
+        <!-- declared RELATIVE on purpose: tests apktool's decode normalisation -->
+        <activity android:name=".RelativeActivity" android:exported="false" />
+
+        <!-- provider authority derived from the package name -->
+        <provider
+            android:name="com.example.oldpkg.FixtureProvider"
+            android:authorities="com.example.oldpkg.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>
