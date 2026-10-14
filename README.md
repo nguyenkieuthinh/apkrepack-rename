@@ -1,0 +1,1 @@
+# apkrepack-rename
